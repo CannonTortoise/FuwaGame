@@ -7,11 +7,15 @@ public class BounceBall : MonoBehaviour {
     public Vector2 leftVelocity;
     public Vector2 rightVelocity;
     private Vector2 m_preVelocity = Vector2.zero;
+    
     void Awake()//初始化
-    {
-        ToolManager.Instance.IniEnvironment();//调用一下，初始化ToolManager
-    }
+    {        
 
+    }
+    private void Update()
+    {
+        
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,6 +33,11 @@ public class BounceBall : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             ToolManager.Instance.GetMagnet();
+        }
+        else if(collision.gameObject.tag == "Fuel")
+        {
+            Destroy(collision.gameObject);
+            ToolManager.Instance.GetFuel();
         }
             
     }

@@ -729,9 +729,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dae2cf2b316d3b498a83787694f6419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 0}
   withMagnet: 0
   magnetTime: 3
   magnetRange: 3
+  fuelTime: 3
+  withFuel: 0
 --- !u!1001 &662015618
 Prefab:
   m_ObjectHideFlags: 0
@@ -1331,11 +1334,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4113969343213456, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4408226
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4113969343213456, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.4835373
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 4113969343213456, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1360,6 +1363,24 @@ Prefab:
     - target: {fileID: 4113969343213456, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652300595450592, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
+      propertyPath: m_TagString
+      value: Fuel
+      objectReference: {fileID: 0}
+    - target: {fileID: 212005261866511238, guid: 24d7a94c66a0eaa4b89ec1f01edd3440,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 07fa4a9616a73f34785703310e3f094b,
+        type: 3}
+    - target: {fileID: 4113969343213456, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.91560006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113969343213456, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.88740003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d7a94c66a0eaa4b89ec1f01edd3440, type: 2}
