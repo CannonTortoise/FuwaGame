@@ -47,7 +47,7 @@ public class ToolManager : MonoBehaviour {
 	}
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         _instance = this;
         
     }

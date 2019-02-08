@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour {
 
-    public GameObject canvas;
+    public GameObject restartUI;
 
     public void Restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -13,8 +13,8 @@ public class Death : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Ball") 
-            canvas.SetActive(true);
+        if (collision.gameObject.name == "Ball")
+            restartUI.SetActive(true);
     }
     
 }
