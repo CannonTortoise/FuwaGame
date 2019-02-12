@@ -8,7 +8,7 @@ public class Death : MonoBehaviour {
     public GameObject restartUI;
 
     public void Restart() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("start");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

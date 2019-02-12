@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BounceBall : MonoBehaviour
 {
 
+    const int CoinScore = 5;
     public Transform plank;
     public Vector2 leftVelocity;
     public Vector2 rightVelocity;
@@ -35,7 +37,13 @@ public class BounceBall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Coin")
+        {
             Destroy(collision.gameObject);
+            int score;
+            score = PlayerPrefs.GetInt("score") + CoinScore;
+            PlayerPrefs.SetInt("score", score);
+            GameObject.Find("Score").GetComponent<Text>().text = "Score: " + System.Convert.ToString(score);
+        }
         else if (collision.gameObject.tag == "Magnet")
         {
             Destroy(collision.gameObject);
