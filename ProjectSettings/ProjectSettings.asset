@@ -616,12 +616,13 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: af100459-6fae-45a9-b522-87ce0f966c59
-  projectName: Fuwa2D
-  organizationId: 26cc5b8e-bf51-49cd-8c9d-f733c2a832fd
+  cloudProjectId: 034a14ed-446f-4760-8a87-285014fa42c8
+  projectName: Fuwa2D (1)
+  organizationId: tyfstray
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

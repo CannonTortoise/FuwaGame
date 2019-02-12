@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Magnet
   - Fuel
+  - BallScale
+  - Invincibility
   layers:
   - Default
   - TransparentFX
