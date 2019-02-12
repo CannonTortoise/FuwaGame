@@ -11,6 +11,11 @@ public class Death : MonoBehaviour {
         SceneManager.LoadScene("start");
     }
 
+    public void Back()
+    {
+        SceneManager.LoadScene("start");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {   if(collision.gameObject.name == "Ball" && ToolManager.Instance.withInvincibility == true)
         {
