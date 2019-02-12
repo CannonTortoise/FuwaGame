@@ -4,21 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-<<<<<<< HEAD
-public class StartGame : MonoBehaviour
-{
-    // 开始按钮
-    public Button StartBtn;
-    void Start()
-    {
-        StartBtn.onClick.AddListener(delegate() { this.start_game("demo3"); });
-    }
-
-    // 开始游戏
-    public void start_game(string level)
-    {
-        SceneManager.LoadScene(level);
-=======
 public class StartGame : MonoBehaviour {
 
     // Use this for initialization
@@ -55,6 +40,5 @@ public class StartGame : MonoBehaviour {
         PlayerPrefs.SetString("highest name", "Turtle");
         GameObject.Find("HighestScore").GetComponent<Text>().text = "Highest Score: \n" +
         PlayerPrefs.GetString("highest name") + " " + System.Convert.ToString(PlayerPrefs.GetInt("highest score"));
->>>>>>> 86179e8cbafc278c7424782e5471411d22ef9d15
     }
 }
