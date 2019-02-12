@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4113969343213456}
   - component: {fileID: 212005261866511238}
   - component: {fileID: 58975849580707176}
-  - component: {fileID: 114179831370374638}
   - component: {fileID: 50754441608862448}
   m_Layer: 0
   m_Name: Magnet
@@ -78,20 +77,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.02}
   serializedVersion: 2
   m_Radius: 0.36222053
---- !u!114 &114179831370374638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1652300595450592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a16583a004e91f42b4659a7956151cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  megRange: 5
-  smoothing: 3
-  targetpos: {x: 0, y: 0, z: 0}
 --- !u!212 &212005261866511238
 SpriteRenderer:
   m_ObjectHideFlags: 1

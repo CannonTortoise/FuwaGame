@@ -62,4 +62,4 @@ MonoBehaviour:
   scaleTime: 3
   originalScale: 0.5
   withInvincibility: 0
-  incincibleTime: 5
+  incincibleTime: 20

@@ -72,7 +72,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1611646539793388}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3f329fffbcbccd34dbd6f54094958e6f, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d844fe0b43796408ed343966ba9a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  restartUI: {fileID: 0}
 --- !u!114 &114883644907152264
 MonoBehaviour:
   m_ObjectHideFlags: 1
