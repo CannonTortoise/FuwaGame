@@ -1,0 +1,96 @@
+[33mcommit d8fc7a356038e02fe18a09a3118fa31857e4eb1c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: oxx1108 <1551193484@qq.com>
+Date:   Sat Feb 9 17:06:18 2019 +0800
+
+    添加了start scene
+
+[33mcommit f80ab98f30e018e2cf9265c45b2cd30eb7fc2469[m
+Author: oxx1108 <1551193484@qq.com>
+Date:   Sat Feb 9 14:10:05 2019 +0800
+
+    Revert "merge后修了个bug"
+    
+    This reverts commit 1e5091371cbdce0c881d7a7b723618e3deedc938.
+
+[33mcommit 5ff89b143861e7257a21017994f932b8b81b4045[m
+Merge: dfa615e 1e50913
+Author: oxx1108 <1551193484@qq.com>
+Date:   Fri Feb 8 22:03:07 2019 +0800
+
+    Merge branch 'master' of https://github.com/CannonTortoise/FuwaGame
+
+[33mcommit dfa615e083eb9f2a32a8c49e9d04e8fa710e0e36[m
+Author: oxx1108 <1551193484@qq.com>
+Date:   Fri Feb 8 22:02:56 2019 +0800
+
+    test
+    
+    test
+
+[33mcommit 1e5091371cbdce0c881d7a7b723618e3deedc938[m
+Author: tyf <812632647@qq.com>
+Date:   Fri Feb 8 21:49:47 2019 +0800
+
+    merge后修了个bug
+    
+    那个重复生成manager的bug修好了
+
+[33mcommit d3dd2a2b5e46e57d70d49a99c19c7c804938e81f[m
+Author: tyf <812632647@qq.com>
+Date:   Fri Feb 8 21:35:24 2019 +0800
+
+    手动merge版本
+    
+    把道具和墙体手动融合了一下，可以再查查有没有bug；
+    现在额外增加了空物体GameManager挂载各种manager（现在只有ToolManager), 而不是挂载在camera上；
+    现在还有个小问题就是场景重复加载的时候回生成多个Gamemanager, 小问题明天我修复下
+
+[33mcommit 102b2784c72cdab336aba67284ae1592f2c17e69[m
+Author: CannonTortoise <ruiw2006@126.com>
+Date:   Fri Feb 8 18:17:50 2019 +0800
+
+    DifferentWalls
+
+[33mcommit 3dd57519e9411caf82249db3c7b885eb2369615f[m
+Author: tyf <812632647@qq.com>
+Date:   Thu Feb 7 16:36:10 2019 +0800
+
+    ToolManager, MagnetPrefab
+    
+    添加了ToolManager 挂载到相机上管理所有道具和状态，添加了磁铁prefab，在金币上挂载了CoinMove 帮助金币移动（被磁铁吸附）
+
+[33mcommit 31bff2c9a8ca40d26decd8ae608d47026588f4d0[m
+Author: CannonTortoise <ruiw2006@126.com>
+Date:   Sun Feb 3 17:16:47 2019 +0800
+
+    Revert "Revert "Demo 0.02""
+    
+    This reverts commit f95940545371a0f0abcc2592485c5ef4e53ce3dc.
+
+[33mcommit f95940545371a0f0abcc2592485c5ef4e53ce3dc[m
+Author: CannonTortoise <ruiw2006@126.com>
+Date:   Sun Feb 3 17:14:34 2019 +0800
+
+    Revert "Demo 0.02"
+    
+    This reverts commit dff2913dbb1bccef6408e6aa30169eaf687f4cb6.
+
+[33mcommit dff2913dbb1bccef6408e6aa30169eaf687f4cb6[m
+Author: CannonTortoise <ruiw2006@126.com>
+Date:   Sun Feb 3 17:06:43 2019 +0800
+
+    Demo 0.02
+
+[33mcommit 1c6dd6b1e2c08eaa3aa732411840576f57388e34[m
+Author: CannonTortoise <ruiw2006@126.com>
+Date:   Thu Jan 31 16:47:16 2019 +0800
+
+    Demo 0.01
+    
+    基本玩法演示
+
+[33mcommit 087bf10e49d1c907bc713835d35c67d9de9753b8[m
+Author: CannonTortoise <ruiw2006@126.com>
+Date:   Thu Jan 31 16:44:52 2019 +0800
+
+    Initial commit

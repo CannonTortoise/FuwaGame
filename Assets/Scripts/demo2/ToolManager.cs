@@ -13,6 +13,14 @@ public class ToolManager : MonoBehaviour {
     public bool withFuel = false;
     //public float fuelSpeed = 4.0f; //手动小球的速度,现在这一项在小球的里面调
 
+    public float scaleCoefficeint = 0.5f; //小球变大变小道具的系数
+    public bool withBallScale = false;
+    public float scaleTime = 3.0f;
+    public float originalScale = 0.5f;// 小球的正常尺寸
+
+    public bool withInvincibility = false; //无敌道具状态
+    public float incincibleTime = 3.0f;
+        
     //提供外界访问方式
     private static ToolManager _instance;
     public static ToolManager Instance
@@ -49,8 +57,31 @@ public class ToolManager : MonoBehaviour {
         ball.GetComponent<Rigidbody2D>().gravityScale = 1; //这个数值后面可以再调整
     }
 
+    public void GetBallScale()
+    {
+        withBallScale = true;
+        float x = ball.GetComponent<Transform>().localScale.x;
+        float y = ball.GetComponent<Transform>().localScale.y;
+        Debug.Log(ball.GetComponent<Transform>().localScale);
+        GameObject.FindGameObjectWithTag("Player").gameObject.transform.localScale = new Vector3(scaleCoefficeint * x, scaleCoefficeint * y, 1.0f);
+        Invoke("ResetBallScale", scaleTime);
+    }
+    private void ResetBallScale()
+    {
+        withBallScale = false;
+        GameObject.FindGameObjectWithTag("Player").gameObject.transform.localScale = new Vector3(originalScale, originalScale, 1);
+    }
 
-
+    public void GetInvincibility()
+    {
+        withInvincibility = true;
+        Invoke("ResetInvincibility", incincibleTime);
+        
+    }
+    private void ResetInvincibility()
+    {
+        withInvincibility = false;
+    }
 
 
     // Use this for initialization

@@ -51,9 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dae2cf2b316d3b498a83787694f6419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
+  ball: {fileID: 1840447077181348, guid: 3bda38d665f3981468eda0ddc2861483, type: 2}
   withMagnet: 0
   magnetTime: 3
   magnetRange: 3
   fuelTime: 3
   withFuel: 0
+  scaleCoefficeint: 0.8
+  withBallScale: 0
+  scaleTime: 3
+  originalScale: 0.5
+  withInvincibility: 0
+  incincibleTime: 5

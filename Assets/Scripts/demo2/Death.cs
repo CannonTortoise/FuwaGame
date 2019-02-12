@@ -12,9 +12,18 @@ public class Death : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Ball")
+    {   if(collision.gameObject.name == "Ball" && ToolManager.Instance.withInvincibility == true)
+        {
+            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
+            this.gameObject.GetComponent<Collider2D>().sharedMaterial.bounciness = 1;
+        }
+        if (collision.gameObject.name == "Ball" && ToolManager.Instance.withInvincibility == false)
+        {
+            this.gameObject.GetComponent<Collider2D>().isTrigger = true;
+            this.gameObject.GetComponent<Collider2D>().sharedMaterial.bounciness = 0;
             restartUI.SetActive(true);
+        }
     }
+          
     
 }
