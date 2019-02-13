@@ -20,6 +20,9 @@ public class ToolManager : MonoBehaviour {
 
     public bool withInvincibility = false; //无敌道具状态
     public float incincibleTime = 3.0f;
+
+    public bool withBombBall = false; //炸弹球（可以摧毁墙体）状态
+    public float bombBallTime = 4.0f;
         
     //提供外界访问方式
     private static ToolManager _instance;
@@ -81,6 +84,16 @@ public class ToolManager : MonoBehaviour {
     private void ResetInvincibility()
     {
         withInvincibility = false;
+    }
+
+    public void GetBombBall()
+    {
+        withBombBall = true;
+        Invoke("ResetBombBall", bombBallTime);
+    }
+    private void ResetBombBall()
+    {
+        withBombBall = false;
     }
 
 

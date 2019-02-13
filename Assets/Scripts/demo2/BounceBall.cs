@@ -65,6 +65,11 @@ public class BounceBall : MonoBehaviour
             Destroy(collision.gameObject);
             ToolManager.Instance.GetInvincibility();
         }
+        else if (collision.gameObject.tag == "BombBall")
+        {
+            Destroy(collision.gameObject);
+            ToolManager.Instance.GetBombBall();
+        }
     }
 
    
