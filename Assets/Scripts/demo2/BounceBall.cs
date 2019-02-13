@@ -6,16 +6,40 @@ using UnityEngine.UI;
 public class BounceBall : MonoBehaviour
 {
 
-    const int CoinScore = 5;
+    const int CoinScore = 100;
+    const float StartHeight = 0;
+    const float EndHeight = 100;
     public Transform plank;
     public Vector2 leftVelocity;
     public Vector2 rightVelocity;
     private GameObject ball;
+
+    void UpdateScore(int score)
+    {
+        PlayerPrefs.SetInt("score", score);
+        GameObject.Find("Score").GetComponent<Text>().text = "Score: " + System.Convert.ToString(score);
+    }
+
     void Awake()//初始化
     {
         ball = GameObject.FindGameObjectWithTag("Player");
     }
 
+    void Update()
+    {
+        int height = (int)((GameObject.Find("Ball").GetComponent<Transform>().position.y - StartHeight) * 100);
+        int max_height = PlayerPrefs.GetInt("max height");
+        if (max_height < height)
+        {
+            int score = PlayerPrefs.GetInt("score") + height - max_height;
+            this.UpdateScore(score);
+            PlayerPrefs.SetInt("max height", height);
+            GameObject.Find("Height").GetComponent<Text>().text = "Height: " + System.Convert.ToString(height);
+            float percent = (GameObject.Find("Ball").GetComponent<Transform>().position.y - StartHeight) / (EndHeight - StartHeight);
+            GameObject.Find("HeightSlider").GetComponent<Slider>().value = percent;
+        }
+        
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,8 +65,7 @@ public class BounceBall : MonoBehaviour
             Destroy(collision.gameObject);
             int score;
             score = PlayerPrefs.GetInt("score") + CoinScore;
-            PlayerPrefs.SetInt("score", score);
-            GameObject.Find("Score").GetComponent<Text>().text = "Score: " + System.Convert.ToString(score);
+            this.UpdateScore(score);
         }
         else if (collision.gameObject.tag == "Magnet")
         {
