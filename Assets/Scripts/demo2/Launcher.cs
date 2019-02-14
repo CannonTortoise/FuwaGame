@@ -25,16 +25,18 @@ public class Launcher : MonoBehaviour {
             float anglez = GetComponentsInParent<Transform>()[1].eulerAngles.z;
             if (!(anglez < maxAngle || anglez > 360 - maxAngle)) 
                 dir = -dir;
-
             if (Input.GetMouseButtonDown(0))
             {
                 launchBegin = false;
                 plank.SetActive(true);
                 ball.transform.SetParent(null);
-                if (anglez<180)
-                    ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(-1,Mathf.Cos(maxAngle)).normalized;
-                else
-                    ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(1, Mathf.Cos(maxAngle)).normalized;
+                if (anglez <= 90)
+                    ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(-1,Mathf.Tan((90 - anglez) * Mathf.PI / 180)).normalized;
+                else if(anglez >= 270)
+                    ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(1, Mathf.Tan((anglez - 270) * Mathf.PI / 180)).normalized;
+                ball.GetComponent<CircleCollider2D>().enabled = true;
+                GetComponent<BoxCollider2D>().enabled = false;
+                Invoke("re_gravity", 1.0f);
             }
         }
 
@@ -46,6 +48,12 @@ public class Launcher : MonoBehaviour {
         ball.transform.parent = transform.parent;
         ball.transform.localPosition = new Vector3(0, 2, 0);
         ball.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        ball.GetComponent<Rigidbody2D>().gravityScale = 0;
+        ball.GetComponent<CircleCollider2D>().enabled = false;
         plank.SetActive(false);
+    }
+
+    private void re_gravity() {
+        ball.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 }
