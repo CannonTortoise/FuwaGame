@@ -42,7 +42,7 @@ public class ToolManager : MonoBehaviour {
         withBombBall = false;
         withFuel = false;
         withInvincibility = false;
-        withMagnet = false;
+        withMagnet = false; 
     }
     public void ResetMagnet()  //复位磁铁状态
     {

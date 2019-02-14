@@ -20,7 +20,7 @@ public class Loader : MonoBehaviour {
         PlayerPrefs.SetInt("max height", 0);
         PlayerPrefs.SetInt("score", 0);
         //ToolManager.Instance.ball = GameObject.FindGameObjectWithTag("Player");
-        ToolManager.Instance.IniToolmanager();
+        ToolManager.Instance.IniToolmanager(); 
     }
     
 
