@@ -19,6 +19,8 @@ public class Loader : MonoBehaviour {
         GameObject.Find("Height").GetComponent<Text>().text = "Height: 0";
         PlayerPrefs.SetInt("max height", 0);
         PlayerPrefs.SetInt("score", 0);
+        //ToolManager.Instance.ball = GameObject.FindGameObjectWithTag("Player");
+        ToolManager.Instance.IniToolmanager();
     }
     
 
