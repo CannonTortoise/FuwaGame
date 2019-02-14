@@ -23,6 +23,8 @@ public class ToolManager : MonoBehaviour {
 
     public bool withBombBall = false; //炸弹球（可以摧毁墙体）状态
     public float bombBallTime = 4.0f;
+
+    public GameObject plank;        //板子
         
     //提供外界访问方式
     private static ToolManager _instance;
@@ -50,6 +52,7 @@ public class ToolManager : MonoBehaviour {
         ball.GetComponent<Rigidbody2D>().gravityScale = 0;
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         withFuel = true;
+        plank.SetActive(false);
         Invoke("ResetFuel", fuelTime);
         //to do :显示给玩家燃料充能即将耗尽
         return;
@@ -57,6 +60,7 @@ public class ToolManager : MonoBehaviour {
     private void ResetFuel()
     {
         withFuel = false;
+        plank.SetActive(true);
         ball.GetComponent<Rigidbody2D>().gravityScale = 1; //这个数值后面可以再调整
     }
 
@@ -100,7 +104,8 @@ public class ToolManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        ball = GameObject.FindGameObjectWithTag("Player");
+        plank = GameObject.Find("Plank");
+        ball = GameObject.Find("Ball");
         withMagnet = false;
 
     }
