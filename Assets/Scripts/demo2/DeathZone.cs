@@ -10,6 +10,7 @@ public class DeathZone : MonoBehaviour {
     public void Restart()
     {
         SceneManager.LoadScene("start");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

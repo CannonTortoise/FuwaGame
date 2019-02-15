@@ -35,7 +35,15 @@ public class ToolManager : MonoBehaviour {
             return _instance;
         }
     }
-
+    public void IniToolmanager() ///c初始化道具状态
+    {
+        ball = GameObject.FindGameObjectWithTag("Player");
+        withBallScale = false;
+        withBombBall = false;
+        withFuel = false;
+        withInvincibility = false;
+        withMagnet = false; 
+    }
     public void ResetMagnet()  //复位磁铁状态
     {
         withMagnet = false;
@@ -117,6 +125,8 @@ public class ToolManager : MonoBehaviour {
     }
     private void Awake()
     {
+
+        
         DontDestroyOnLoad(gameObject);
         _instance = this;
 
