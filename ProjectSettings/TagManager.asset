@@ -12,6 +12,7 @@ TagManager:
   - Invincibility
   - Bomb
   - BombBall
+  - CoinBox
   layers:
   - Default
   - TransparentFX
