@@ -11,7 +11,11 @@ public class BallController : MonoBehaviour {
     public Vector2 middleVelocity;
     public Vector2 leftVelocity;
     public Vector2 rightVelocity;
+    public Color pressColor;
     private GameObject ball;
+    private Image lbutton;
+    private Image mbutton;
+    private Image rbutton;
 
     void UpdateScore(int score)
     {
@@ -22,6 +26,9 @@ public class BallController : MonoBehaviour {
     void Awake()//初始化
     {
         ball = GameObject.FindGameObjectWithTag("Player");
+        lbutton = GameObject.Find("LButton").GetComponent<Image>();
+        mbutton = GameObject.Find("MButton").GetComponent<Image>();
+        rbutton = GameObject.Find("RButton").GetComponent<Image>();
     }
 
     void Update()
@@ -37,13 +44,27 @@ public class BallController : MonoBehaviour {
             float percent = (GameObject.Find("Ball").GetComponent<Transform>().position.y - StartHeight) / (EndHeight - StartHeight);
             GameObject.Find("HeightSlider").GetComponent<Slider>().value = percent;
         }
-        if(Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.L) || Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.A))
+        //if(Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.L) || Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
             GetComponent<Rigidbody2D>().velocity = middleVelocity;
-        else if (Input.GetKeyDown(KeyCode.A)) 
+            mbutton.color = pressColor;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             GetComponent<Rigidbody2D>().velocity = leftVelocity;
-        else if(Input.GetKeyDown(KeyCode.L))
+            lbutton.color = pressColor;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             GetComponent<Rigidbody2D>().velocity = rightVelocity;
-
+            rbutton.color = pressColor;
+        }
+            
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+            mbutton.color = Color.white;
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+            lbutton.color = Color.white;
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+            rbutton.color = Color.white;
     }
 
 
