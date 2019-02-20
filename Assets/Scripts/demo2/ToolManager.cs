@@ -12,6 +12,7 @@ public class ToolManager : MonoBehaviour {
     public float fuelTime = 3.0f;  //小球获得燃料充能时间
     public bool withFuel = false;
     //public float fuelSpeed = 4.0f; //手动小球的速度,现在这一项在小球的里面调
+    public float superFuleTime = 10.0f; //吃豆人副本控制时间
 
     public float scaleCoefficeint = 0.5f; //小球变大变小道具的系数
     public bool withBallScale = false;
@@ -25,6 +26,8 @@ public class ToolManager : MonoBehaviour {
     public float bombBallTime = 4.0f;
 
     public GameObject plank;        //板子
+
+    
         
     //提供外界访问方式
     private static ToolManager _instance;
@@ -42,7 +45,8 @@ public class ToolManager : MonoBehaviour {
         withBombBall = false;
         withFuel = false;
         withInvincibility = false;
-        withMagnet = false; 
+        withMagnet = false;
+        plank = GameObject.Find("Plank");
     }
     public void ResetMagnet()  //复位磁铁状态
     {
@@ -55,13 +59,13 @@ public class ToolManager : MonoBehaviour {
         Invoke("ResetMagnet", magnetTime);
     }
 
-    public void GetFuel()  //获得燃料充能状态
+    public void GetFuel(float lastTime)  //获得燃料充能状态
     {
         ball.GetComponent<Rigidbody2D>().gravityScale = 0;
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         withFuel = true;
         plank.SetActive(false);
-        Invoke("ResetFuel", fuelTime);
+        Invoke("ResetFuel", lastTime);
         //to do :显示给玩家燃料充能即将耗尽
         return;
     }

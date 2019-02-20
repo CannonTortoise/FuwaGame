@@ -75,7 +75,7 @@ public class BounceBall : MonoBehaviour
         else if (collision.gameObject.tag == "Fuel")
         {
             Destroy(collision.gameObject);
-            ToolManager.Instance.GetFuel();
+            ToolManager.Instance.GetFuel(ToolManager.Instance.fuelTime);
         }
         else if (collision.gameObject.tag == "BallScale")
         {
@@ -92,6 +92,12 @@ public class BounceBall : MonoBehaviour
         {
             Destroy(collision.gameObject);
             ToolManager.Instance.GetBombBall();
+        }
+        else if (collision.gameObject.tag == "EnterPac")
+        {
+            Destroy(collision.gameObject);
+            ToolManager.Instance.GetFuel(ToolManager.Instance.superFuleTime);
+            //ToolManager.Instance
         }
     }
 

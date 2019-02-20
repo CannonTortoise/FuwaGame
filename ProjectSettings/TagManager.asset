@@ -13,6 +13,8 @@ TagManager:
   - Bomb
   - BombBall
   - CoinBox
+  - SuperFuel
+  - EnterPac
   layers:
   - Default
   - TransparentFX
