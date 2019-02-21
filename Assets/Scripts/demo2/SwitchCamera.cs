@@ -5,17 +5,13 @@ using UnityEngine;
 public class SwitchCamera : MonoBehaviour {
 
     public Transform _camera;
-    public float speed = 1.0f;
     private Vector3 target;
 
-    private void Start()
-    {
-        target = _camera.position;
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Ball") {
+            target = _camera.position;
             target.y = target.y + 10.24f;
             _camera.position = target;
             Destroy(this);
