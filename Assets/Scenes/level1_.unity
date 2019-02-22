@@ -2205,6 +2205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamemanager: {fileID: 1110520388165312, guid: 46178dd41f71c784aaf7d3b060889a69,
     type: 2}
+  _camera: {fileID: 519420032}
+  _ball: {fileID: 72504652}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
