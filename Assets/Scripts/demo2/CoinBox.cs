@@ -21,7 +21,7 @@ public class CoinBox : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector3 speed = GameObject.Find("Ball").GetComponent<Rigidbody2D>().velocity;
-        print(speed);
+        //print(speed);
         if (speed.y >= 0)
             coin.SetActive(true);
     }
