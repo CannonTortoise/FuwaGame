@@ -444,8 +444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plank: {fileID: 1504992149}
-  leftVelocity: {x: -3, y: 8}
-  rightVelocity: {x: 3, y: 8}
+  verticalVelocity: 3
+  horizontalVelocity: 7
 --- !u!50 &72504649
 Rigidbody2D:
   serializedVersion: 4

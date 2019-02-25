@@ -10,8 +10,8 @@ public class BounceBall : MonoBehaviour
     const float StartHeight = 0;
     const float EndHeight = 100;
     public Transform plank;
-    public Vector2 leftVelocity;
-    public Vector2 rightVelocity;
+    public float verticalVelocity;
+    public float horizontalVelocity;
     private GameObject ball;
 
     void UpdateScore(int score)
@@ -45,15 +45,26 @@ public class BounceBall : MonoBehaviour
     {
         if (collision.gameObject.name == "lplank")
         {
+            
+            Vector2 leftVelocity = new Vector2(-horizontalVelocity, verticalVelocity);
+            
             float contact_posy = collision.contacts[0].point.y;
             if (contact_posy > plank.position.y)
                 GetComponent<Rigidbody2D>().velocity = leftVelocity;
         }
         else if (collision.gameObject.name == "rplank")
         {
+            Vector2 rightVelocity = new Vector2(horizontalVelocity, verticalVelocity);
             float contact_posy = collision.contacts[0].point.y;
             if (contact_posy > plank.position.y)
                 GetComponent<Rigidbody2D>().velocity = rightVelocity;
+        }
+        else if (collision.gameObject.name == "mplank")
+        {
+            Vector2 midVelocity = new Vector2(0, verticalVelocity);
+            float contact_posy = collision.contacts[0].point.y;
+            if (contact_posy > plank.position.y)
+                GetComponent<Rigidbody2D>().velocity = midVelocity;
         }
 
     }

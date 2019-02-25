@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
 
+    public int level;
+
     // Use this for initialization
     void Start () {
         if (!PlayerPrefs.HasKey("highest score") || PlayerPrefs.GetInt("score") > PlayerPrefs.GetInt("highest score"))
@@ -17,6 +19,7 @@ public class StartGame : MonoBehaviour {
         PlayerPrefs.GetString("highest name") + " " + System.Convert.ToString(PlayerPrefs.GetInt("highest score"));
         PlayerPrefs.SetString("player name", null);
         PlayerPrefs.SetInt("score", 0);
+        PlayerPrefs.SetInt("level", 0);
     }
 	
 	// Update is called once per frame
@@ -28,6 +31,7 @@ public class StartGame : MonoBehaviour {
         if (PlayerPrefs.GetString("player name") == null)
             PlayerPrefs.SetString("player name", "Turtle");
         PlayerPrefs.SetInt("score", 0);
+        PlayerPrefs.SetInt("level", level);
         SceneManager.LoadScene(Level);
     }
 

@@ -9,7 +9,7 @@ public class ToolManager : MonoBehaviour {
     public float magnetRange = 3.0f; // 磁铁持续范围,现在的这个东西在coinmove里体现
     private GameObject magcollider;
 
-    public float fuelTime = 3.0f;  //小球获得燃料充能时间
+    public float fuelTime = 5.0f;  //小球获得燃料充能时间
     public bool withFuel = false;
     //public float fuelSpeed = 4.0f; //手动小球的速度,现在这一项在小球的里面调
     public float superFuleTime = 10.0f; //吃豆人副本控制时间
