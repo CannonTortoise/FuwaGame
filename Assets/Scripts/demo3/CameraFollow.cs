@@ -7,8 +7,8 @@ public class CameraFollow : MonoBehaviour
     public Transform target;    //跟随目标
     public float maxDistance;   //相机与目标的相对范围
     public float speed;         //相机移动的平滑度
-    public float _min;        //边界最大值
-    public float _max;        //边界最小值
+    private float _min;         //边界最大值
+    private float _max;         //边界最小值
 
 
     void Update()
@@ -23,5 +23,10 @@ public class CameraFollow : MonoBehaviour
         float cameraHalfHeight = GetComponent<Camera>().orthographicSize;//视窗水平方向一半的大小
         y = Mathf.Clamp(y, _min + cameraHalfHeight, _max - cameraHalfHeight);//限定x值
         transform.position = new Vector3(transform.position.x, y, transform.position.z);//改变相机的位置
+    }
+
+    public void SetRange(float min, float max) {
+        _min = min;
+        _max = max;
     }
 }

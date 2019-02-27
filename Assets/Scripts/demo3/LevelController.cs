@@ -11,16 +11,25 @@ public class LevelController : MonoBehaviour {
         public int mstep;
         public int rstep;
     }
+    [System.Serializable]
+    public struct CameraRange
+    {
+        public float min;
+        public float max;
+    }
 
     public int totalLevel;
     private int currentLevel;
     public Vector2[] resetPos;
     public Step[] levelStep;
+    public CameraRange[] cameraRange;
     private JumpController jc;
+    private CameraFollow cf;
     private GameObject levelPrefab;
 
 
     void Start () {
+        cf = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         jc = GameObject.Find("Ball").GetComponent<JumpController>();
         ChangeLevel(0);
     }
@@ -29,6 +38,7 @@ public class LevelController : MonoBehaviour {
         currentLevel = i;
         jc.SetSteps(levelStep[currentLevel].lstep, levelStep[currentLevel].mstep, levelStep[currentLevel].rstep);
         levelPrefab = (GameObject)Resources.Load("Level" + currentLevel);
+        cf.SetRange(cameraRange[currentLevel].min, cameraRange[currentLevel].max);
     }
 
     public void NextLevel()

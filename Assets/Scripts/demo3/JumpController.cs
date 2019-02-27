@@ -94,6 +94,16 @@ public class JumpController : MonoBehaviour
         {
             lc.ResetLevel();
         }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "LevelBoundary")
+        {
+            lc.NextLevel();
+            collision.gameObject.tag = "Untagged";
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
