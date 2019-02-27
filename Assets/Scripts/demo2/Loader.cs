@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Loader : MonoBehaviour {
     //这个脚本用来控制每个场景中唯一只有一个GameManager
     public GameObject gamemanager;
+    public GameObject lc;
     public Transform _camera;
     public Transform _ball;
     // Use this for initialization
@@ -33,7 +34,7 @@ public class Loader : MonoBehaviour {
         GameObject.Find("Height").GetComponent<Text>().text = "Height: 0";
         PlayerPrefs.SetInt("max height", 0);
         PlayerPrefs.SetInt("score", 0);
-        SetLevel(PlayerPrefs.GetInt("level"));
+        //lc.GetComponent<LevelController>().ChangeLevel(PlayerPrefs.GetInt("level"));
         //ToolManager.Instance.ball = GameObject.FindGameObjectWithTag("Player");
         ToolManager.Instance.IniToolmanager(); 
     }

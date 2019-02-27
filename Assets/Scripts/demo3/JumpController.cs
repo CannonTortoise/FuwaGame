@@ -9,6 +9,7 @@ public class JumpController : MonoBehaviour
     public float horizontalVelocity;
     public Color pressColor;
     public int stepIncrement;
+    public int coinIncrement;
 
     //三种跳跃的速度
     private Vector2 midVelocity;
@@ -47,6 +48,14 @@ public class JumpController : MonoBehaviour
         lc = GameObject.Find("Controller").GetComponent<LevelController>();
     }
 
+    private void CheckDeath()
+    {
+        if (lstep == 0 && rstep == 0 && mstep == 0)
+        {
+            lc.ResetLevel();
+        }
+    }
+
     void Update()
     {
         ltext.text = lstep.ToString();
@@ -59,6 +68,7 @@ public class JumpController : MonoBehaviour
             if (mstep > 0) {
                 mstep--;
                 GetComponent<Rigidbody2D>().velocity = midVelocity;
+                CheckDeath();
             }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -68,6 +78,7 @@ public class JumpController : MonoBehaviour
             {
                 lstep--;
                 GetComponent<Rigidbody2D>().velocity = leftVelocity;
+                CheckDeath();
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -77,6 +88,7 @@ public class JumpController : MonoBehaviour
             {
                 rstep--;
                 GetComponent<Rigidbody2D>().velocity = rightVelocity;
+                CheckDeath();
             }
         }
 
@@ -126,6 +138,20 @@ public class JumpController : MonoBehaviour
         else if (collision.gameObject.tag == "Coin")
         {
             Destroy(collision.gameObject);
+            int type = Random.Range(0, 3);
+            //print(type);
+            if (type == 0)
+            {
+                lstep += coinIncrement;
+            }
+            if (type == 1)
+            {
+                mstep += coinIncrement;
+            }
+            if (type == 2)
+            {
+                rstep += coinIncrement;
+            }
         }
         else if (collision.gameObject.tag == "Magnet")
         {

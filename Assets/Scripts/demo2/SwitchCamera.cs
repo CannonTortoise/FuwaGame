@@ -11,10 +11,10 @@ public class SwitchCamera : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Ball") {
-            target = _camera.position;
-            target.y = target.y + 10.24f;
-            _camera.position = target;
-            Destroy(this);
+            //target = _camera.position;
+            //target.y = target.y + 10.24f;
+            //_camera.position = target;
+            //Destroy(this);
         }  
     }
 

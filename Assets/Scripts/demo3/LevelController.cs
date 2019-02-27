@@ -31,14 +31,20 @@ public class LevelController : MonoBehaviour {
     void Start () {
         cf = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         jc = GameObject.Find("Ball").GetComponent<JumpController>();
-        ChangeLevel(0);
+        ChangeLevel(PlayerPrefs.GetInt("level"));
     }
 
     public void ChangeLevel(int i) {
         currentLevel = i;
+        GameObject.Find("OneWayFlatform_Level" + currentLevel.ToString()).tag = "Untagged";
         jc.SetSteps(levelStep[currentLevel].lstep, levelStep[currentLevel].mstep, levelStep[currentLevel].rstep);
         levelPrefab = (GameObject)Resources.Load("Level" + currentLevel);
         cf.SetRange(cameraRange[currentLevel].min, cameraRange[currentLevel].max);
+        GameObject ball = GameObject.Find("Ball");
+        ball.transform.position = resetPos[currentLevel];
+        //print(currentLevel);
+        //print(ball.transform.position);
+        ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     public void NextLevel()
