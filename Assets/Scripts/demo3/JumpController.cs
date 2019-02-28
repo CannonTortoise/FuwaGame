@@ -115,6 +115,7 @@ public class JumpController : MonoBehaviour
         {
             lc.NextLevel();
             collision.gameObject.tag = "Untagged";
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, verticalVelocity/2); ;
         }
     }
 
