@@ -60,7 +60,7 @@ public class ToolManager : MonoBehaviour {
         ball.GetComponent<Rigidbody2D>().gravityScale = 0;
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         withFuel = true;
-        plank.SetActive(false);
+        //plank.SetActive(false);
         Invoke("ResetFuel", fuelTime);
         //to do :显示给玩家燃料充能即将耗尽
         return;
@@ -68,7 +68,7 @@ public class ToolManager : MonoBehaviour {
     private void ResetFuel()
     {
         withFuel = false;
-        plank.SetActive(true);
+        //plank.SetActive(true);
         ball.GetComponent<Rigidbody2D>().gravityScale = 1; //这个数值后面可以再调整
     }
 

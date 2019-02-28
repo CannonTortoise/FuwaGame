@@ -15,8 +15,8 @@ public class BombWall : MonoBehaviour {
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && ToolManager.Instance.withBombBall == true)
+    { 
+        if (collision.gameObject.tag == "Player" && ToolManager.Instance.withBombBall == true && collision.gameObject.GetComponent<Rigidbody2D>().velocity.y >= 0)
         {
             Destroy(this.gameObject);
         }
