@@ -85,7 +85,7 @@ public class BallController : MonoBehaviour {
         else if (collision.gameObject.tag == "Fuel")
         {
             Destroy(collision.gameObject);
-            ToolManager.Instance.GetFuel();
+            ToolManager.Instance.GetFuel(ToolManager.Instance.fuelTime);
         }
         else if (collision.gameObject.tag == "BallScale")
         {
