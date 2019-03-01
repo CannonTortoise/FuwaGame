@@ -62,7 +62,7 @@ public class JumpController : MonoBehaviour
         mtext.text = mstep.ToString();
         rtext.text = rstep.ToString();
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && ToolManager.Instance.withFuel==false)
         {
             mbutton.color = pressColor;
             if (mstep > 0) {
@@ -71,7 +71,7 @@ public class JumpController : MonoBehaviour
                 //CheckDeath();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && ToolManager.Instance.withFuel == false)
         {
             lbutton.color = pressColor;
             if (lstep > 0)
@@ -81,7 +81,7 @@ public class JumpController : MonoBehaviour
                 //CheckDeath();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && ToolManager.Instance.withFuel == false)
         {
             rbutton.color = pressColor;
             if (rstep > 0)

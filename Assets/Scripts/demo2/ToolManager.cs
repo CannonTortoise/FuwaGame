@@ -65,7 +65,7 @@ public class ToolManager : MonoBehaviour {
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         withFuel = true;
 
-        plank.SetActive(false);
+        //plank.SetActive(false);
         Invoke("ResetFuel", lastTime);
 
         //plank.SetActive(false);
