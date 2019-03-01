@@ -28,6 +28,7 @@ public class CoinMove : MonoBehaviour {
         if (ToolManager.Instance.withMagnet == true )
         {
             targetpos = GameObject.FindGameObjectWithTag("Player").transform.position;
+            //print(megRange);
             if (Vector3.Distance(transform.position, targetpos) < megRange)
             {
                 rigidbody.MovePosition(Vector2.Lerp(transform.position, targetpos, smoothing * Time.deltaTime));

@@ -68,7 +68,7 @@ public class JumpController : MonoBehaviour
             if (mstep > 0) {
                 mstep--;
                 GetComponent<Rigidbody2D>().velocity = midVelocity;
-                CheckDeath();
+                //CheckDeath();
             }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -78,7 +78,7 @@ public class JumpController : MonoBehaviour
             {
                 lstep--;
                 GetComponent<Rigidbody2D>().velocity = leftVelocity;
-                CheckDeath();
+                //CheckDeath();
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -88,7 +88,7 @@ public class JumpController : MonoBehaviour
             {
                 rstep--;
                 GetComponent<Rigidbody2D>().velocity = rightVelocity;
-                CheckDeath();
+                //CheckDeath();
             }
         }
 
@@ -115,6 +115,7 @@ public class JumpController : MonoBehaviour
         {
             lc.NextLevel();
             collision.gameObject.tag = "Untagged";
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, verticalVelocity/2); ;
         }
     }
 
