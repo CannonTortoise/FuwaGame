@@ -8,11 +8,12 @@ public class Launcher : MonoBehaviour {
     public float launchSpeed;
     public float maxAngle;
     public GameObject ball;
-    public GameObject plank;
+    public GameObject launch;
+    //public GameObject plank;
     private bool launchBegin;
     private int dir;
 
-	void Start () {
+	void Awake () {
         launchBegin = false;
         dir = 1;
     }
@@ -28,7 +29,7 @@ public class Launcher : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 launchBegin = false;
-                plank.SetActive(true);
+                //plank.SetActive(true);
                 ball.transform.SetParent(null);
                 if (anglez <= 90)
                     ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(-1,Mathf.Tan((90 - anglez) * Mathf.PI / 180)).normalized;
@@ -36,7 +37,9 @@ public class Launcher : MonoBehaviour {
                     ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(1, Mathf.Tan((anglez - 270) * Mathf.PI / 180)).normalized;
                 ball.GetComponent<CircleCollider2D>().enabled = true;
                 GetComponent<BoxCollider2D>().enabled = false;
-                Invoke("re_gravity", 1.0f);
+                ball.GetComponent<Rigidbody2D>().gravityScale = 1;
+                //Invoke("re_gravity", 1.0f);
+                Destroy(launch);
             }
         }
 
@@ -50,7 +53,7 @@ public class Launcher : MonoBehaviour {
         ball.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         ball.GetComponent<Rigidbody2D>().gravityScale = 0;
         ball.GetComponent<CircleCollider2D>().enabled = false;
-        plank.SetActive(false);
+        //plank.SetActive(false);
     }
 
     private void re_gravity() {
