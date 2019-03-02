@@ -27,6 +27,7 @@ public class CoinMove : MonoBehaviour {
 	void Update () {
         if (ToolManager.Instance.withMagnet == true )
         {
+            //GetComponentInParent<Pendulum>().enabled = false;
             targetpos = GameObject.FindGameObjectWithTag("Player").transform.position;
             //print(megRange);
             if (Vector3.Distance(transform.position, targetpos) < megRange)
