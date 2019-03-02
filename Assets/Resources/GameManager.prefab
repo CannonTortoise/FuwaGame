@@ -157,7 +157,7 @@ MonoBehaviour:
   scaleCoefficeint: 0.5
   withBallScale: 0
   scaleTime: 3
-  originalScale: 0.5
+  originalScale: 0.3
   withInvincibility: 0
   incincibleTime: 20
   withBombBall: 0
