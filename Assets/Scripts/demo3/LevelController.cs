@@ -54,6 +54,7 @@ public class LevelController : MonoBehaviour {
 
     public void ResetLevel()
     {
+        ToolManager.Instance.IniToolmanager();
         string levelname = "Level" + currentLevel + "(Clone)";
         Destroy(GameObject.Find(levelname));
         Instantiate(levelPrefab);
