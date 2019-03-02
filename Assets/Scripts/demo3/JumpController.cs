@@ -35,6 +35,8 @@ public class JumpController : MonoBehaviour
     private Image rbutton;
 
     private LevelController lc;
+    //音效
+    //public AudioSource hei;  //音效“嘿”
 
     void Awake()
     {
@@ -54,6 +56,7 @@ public class JumpController : MonoBehaviour
         sr = gameObject.transform.GetComponent<SpriteRenderer>();
         idlesprite = Resources.Load("turtle", typeof(Sprite)) as Sprite;
         sr.sprite = idlesprite;
+        
     }
     private void ResetIdleSprite()
     {
@@ -78,6 +81,7 @@ public class JumpController : MonoBehaviour
         {
             mbutton.color = pressColor;
             if (mstep > 0) {
+                ToolManager.Instance.PlayAudio(0); //播放“嘿”
                 mstep--;
                 GetComponent<Rigidbody2D>().velocity = midVelocity;
                 //CheckDeath();
@@ -90,6 +94,7 @@ public class JumpController : MonoBehaviour
             lbutton.color = pressColor;
             if (lstep > 0)
             {
+                ToolManager.Instance.PlayAudio(0); //播放“嘿”
                 lstep--;
                 GetComponent<Rigidbody2D>().velocity = leftVelocity;
                 //CheckDeath();
@@ -102,6 +107,7 @@ public class JumpController : MonoBehaviour
             rbutton.color = pressColor;
             if (rstep > 0)
             {
+                ToolManager.Instance.PlayAudio(0); //播放“嘿”
                 rstep--;
                 GetComponent<Rigidbody2D>().velocity = rightVelocity;
                 //CheckDeath();
@@ -131,6 +137,7 @@ public class JumpController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Death")
         {
+            
             lc.ResetLevel();
         }
 
@@ -140,6 +147,7 @@ public class JumpController : MonoBehaviour
     {
         if (collision.gameObject.tag == "LevelBoundary")
         {
+            ToolManager.Instance.PlayAudio(3);
             lc.NextLevel();
             collision.gameObject.tag = "Untagged";
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, verticalVelocity/2); ;
@@ -180,6 +188,10 @@ public class JumpController : MonoBehaviour
             {
                 rstep += coinIncrement;
             }
+        }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
+            ToolManager.Instance.PlayAudio(1);
         }
         else if (collision.gameObject.tag == "Magnet")
         {

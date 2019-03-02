@@ -28,6 +28,7 @@ public class Launcher : MonoBehaviour {
                 dir = -dir;
             if (Input.GetMouseButtonDown(0))
             {
+                ToolManager.Instance.PlayAudio(2);
                 launchBegin = false;
                 //plank.SetActive(true);
                 ball.transform.SetParent(null);

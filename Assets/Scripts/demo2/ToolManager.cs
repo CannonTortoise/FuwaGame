@@ -27,6 +27,9 @@ public class ToolManager : MonoBehaviour {
 
     public GameObject plank;        //板子
 
+    //public AudioSource hei;  //
+    public AudioClip[] audioClips;
+
     
         
     //提供外界访问方式
@@ -47,6 +50,12 @@ public class ToolManager : MonoBehaviour {
         withInvincibility = false;
         withMagnet = false;
         plank = GameObject.Find("Plank");
+        
+    }
+    public void PlayAudio(int type)  //0：嘿 1：撞了 2：失败 3：通过
+    {
+        this.GetComponent<AudioSource>().clip = audioClips[type];
+        this.GetComponent<AudioSource>().Play();
     }
     public void ResetMagnet()  //复位磁铁状态
     {
@@ -117,7 +126,7 @@ public class ToolManager : MonoBehaviour {
         withBombBall = false;
     }
 
-
+    
     // Use this for initialization
     void Start()
     {
