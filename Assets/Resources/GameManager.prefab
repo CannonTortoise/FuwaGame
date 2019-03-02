@@ -150,7 +150,7 @@ MonoBehaviour:
   ball: {fileID: 1840447077181348, guid: 3bda38d665f3981468eda0ddc2861483, type: 2}
   withMagnet: 0
   magnetTime: 3
-  magnetRange: 5
+  magnetRange: 2
   fuelTime: 3
   withFuel: 0
   superFuleTime: 10
