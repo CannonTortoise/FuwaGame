@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class JumpController : MonoBehaviour
 {
+    private Sprite idlesprite;
+    private SpriteRenderer sr;
+    public float jumpshowTime=0.2f;
+
+
     public float verticalVelocity;
     public float horizontalVelocity;
     public Color pressColor;
@@ -46,6 +51,13 @@ public class JumpController : MonoBehaviour
         midVelocity = new Vector2(0, verticalVelocity);
         rightVelocity = new Vector2(horizontalVelocity, verticalVelocity);
         lc = GameObject.Find("Controller").GetComponent<LevelController>();
+        sr = gameObject.transform.GetComponent<SpriteRenderer>();
+        idlesprite = Resources.Load("turtle", typeof(Sprite)) as Sprite;
+        sr.sprite = idlesprite;
+    }
+    private void ResetIdleSprite()
+    {
+        sr.sprite = idlesprite;
     }
 
     private void CheckDeath()
@@ -69,6 +81,8 @@ public class JumpController : MonoBehaviour
                 mstep--;
                 GetComponent<Rigidbody2D>().velocity = midVelocity;
                 //CheckDeath();
+                sr.sprite = Resources.Load("jump", typeof(Sprite)) as Sprite;
+                Invoke("ResetIdleSprite", jumpshowTime);
             }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && ToolManager.Instance.withFuel == false)
@@ -79,6 +93,8 @@ public class JumpController : MonoBehaviour
                 lstep--;
                 GetComponent<Rigidbody2D>().velocity = leftVelocity;
                 //CheckDeath();
+                sr.sprite = Resources.Load("jump", typeof(Sprite)) as Sprite;
+                Invoke("ResetIdleSprite", jumpshowTime);
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && ToolManager.Instance.withFuel == false)
@@ -89,10 +105,21 @@ public class JumpController : MonoBehaviour
                 rstep--;
                 GetComponent<Rigidbody2D>().velocity = rightVelocity;
                 //CheckDeath();
+                sr.sprite = Resources.Load("jump", typeof(Sprite)) as Sprite;
+                Invoke("ResetIdleSprite", jumpshowTime);
             }
         }
+        else if (GetComponent<Rigidbody2D>().velocity.y < -0.1f && ToolManager.Instance.withFuel == false)
+        {
+           
+            sr.sprite = Resources.Load("fall", typeof(Sprite)) as Sprite;
+        }
+        else if (GetComponent<Rigidbody2D>().velocity.y ==0 && ToolManager.Instance.withFuel == false)
+        {
+            ResetIdleSprite();
+        }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+            if (Input.GetKeyUp(KeyCode.UpArrow))
             mbutton.color = Color.white;
         else if (Input.GetKeyUp(KeyCode.LeftArrow))
             lbutton.color = Color.white;
