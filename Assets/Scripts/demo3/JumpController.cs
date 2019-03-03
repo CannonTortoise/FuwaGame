@@ -38,6 +38,10 @@ public class JumpController : MonoBehaviour
     //音效
     //public AudioSource hei;  //音效“嘿”
 
+    private ParticleSystem lexplodeFX;
+    private ParticleSystem mexplodeFX;
+    private ParticleSystem rexplodeFX;
+
     void Awake()
     {
         lstep = 100;
@@ -56,7 +60,13 @@ public class JumpController : MonoBehaviour
         sr = gameObject.transform.GetComponent<SpriteRenderer>();
         idlesprite = Resources.Load("turtle", typeof(Sprite)) as Sprite;
         sr.sprite = idlesprite;
-        
+        lexplodeFX = GameObject.Find("LExplodeFX").GetComponentInChildren<ParticleSystem>();
+        lexplodeFX.Stop();
+        mexplodeFX = GameObject.Find("MExplodeFX").GetComponentInChildren<ParticleSystem>();
+        mexplodeFX.Stop();
+        rexplodeFX = GameObject.Find("RExplodeFX").GetComponentInChildren<ParticleSystem>();
+        rexplodeFX.Stop();
+
     }
     private void ResetIdleSprite()
     {
@@ -77,10 +87,12 @@ public class JumpController : MonoBehaviour
         mtext.text = mstep.ToString();
         rtext.text = rstep.ToString();
 
+
         if (Input.GetKeyDown(KeyCode.UpArrow) && ToolManager.Instance.withFuel==false)
         {
             mbutton.color = pressColor;
             if (mstep > 0) {
+                mexplodeFX.Play();
                 ToolManager.Instance.PlayAudio(0); //播放“嘿”
                 mstep--;
                 GetComponent<Rigidbody2D>().velocity = midVelocity;
@@ -94,6 +106,7 @@ public class JumpController : MonoBehaviour
             lbutton.color = pressColor;
             if (lstep > 0)
             {
+                lexplodeFX.Play();
                 ToolManager.Instance.PlayAudio(0); //播放“嘿”
                 lstep--;
                 GetComponent<Rigidbody2D>().velocity = leftVelocity;
@@ -107,6 +120,7 @@ public class JumpController : MonoBehaviour
             rbutton.color = pressColor;
             if (rstep > 0)
             {
+                rexplodeFX.Play();
                 ToolManager.Instance.PlayAudio(0); //播放“嘿”
                 rstep--;
                 GetComponent<Rigidbody2D>().velocity = rightVelocity;
@@ -125,7 +139,7 @@ public class JumpController : MonoBehaviour
             ResetIdleSprite();
         }
 
-            if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow))
             mbutton.color = Color.white;
         else if (Input.GetKeyUp(KeyCode.LeftArrow))
             lbutton.color = Color.white;
