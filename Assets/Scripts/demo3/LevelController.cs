@@ -65,8 +65,6 @@ public class LevelController : MonoBehaviour {
             isResetting = true;
             int randomFX = Random.Range(0, resetFX.Length);
             resetFX[randomFX].Play();
-            ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            ball.GetComponent<Rigidbody2D>().gravityScale = 0f;
             jc.SetSteps(0, 0, 0);
             Invoke("AfterResetLevel", 2.0f);
         }
@@ -80,7 +78,6 @@ public class LevelController : MonoBehaviour {
         Destroy(GameObject.Find(levelname));
         Instantiate(levelPrefab);
         ball.transform.position = resetPos[currentLevel];
-        ball.GetComponent<Rigidbody2D>().gravityScale = 1f;
         jc.SetSteps(levelStep[currentLevel].lstep, levelStep[currentLevel].mstep, levelStep[currentLevel].rstep);
         isResetting = false;
     }
