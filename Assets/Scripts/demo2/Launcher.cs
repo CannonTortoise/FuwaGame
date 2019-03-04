@@ -40,7 +40,7 @@ public class Launcher : MonoBehaviour {
                 GetComponent<BoxCollider2D>().enabled = false;
                 ball.GetComponent<Rigidbody2D>().gravityScale = 1;
                 //Invoke("re_gravity", 1.0f);
-                Destroy(launch);
+                //launch.SetActive(false);
             }
         }
 

@@ -65,6 +65,7 @@ public class LevelController : MonoBehaviour {
             isResetting = true;
             int randomFX = Random.Range(0, resetFX.Length);
             resetFX[randomFX].Play();
+            ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             jc.SetSteps(0, 0, 0);
             Invoke("AfterResetLevel", 2.0f);
         }
