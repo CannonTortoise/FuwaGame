@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinMove : MonoBehaviour {
     //public bool autoMove = false;
-    public int megRange = 5;
+    public int megRange = 3;
     public float smoothing = 3;
     private Rigidbody2D rigidbody;
     private BoxCollider2D collider;
@@ -26,8 +26,12 @@ public class CoinMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (ToolManager.Instance.withMagnet == true )
-        {
-            //GetComponentInParent<Pendulum>().enabled = false;
+        {if (GetComponentInParent<Pendulum>() != null)
+            {
+                print(gameObject.GetComponentInParent<Transform>().tag);
+                GetComponentInParent<Pendulum>().enabled = false;
+            }
+            
             targetpos = GameObject.FindGameObjectWithTag("Player").transform.position;
             //print(megRange);
             if (Vector3.Distance(transform.position, targetpos) < megRange)
