@@ -232,7 +232,7 @@ public class JumpController : MonoBehaviour
             Destroy(collision.gameObject);
             ToolManager.Instance.GetBombBall();
         }
-        else if (collision.gameObject.tag == "Death")
+        else if (collision.gameObject.tag == "Death" && ToolManager.Instance.withInvincibility == false)
         {
             lc.ResetLevel();
         }

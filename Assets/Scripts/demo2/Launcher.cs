@@ -9,6 +9,7 @@ public class Launcher : MonoBehaviour {
     public float maxAngle;
     public GameObject ball;
     public GameObject launch;
+    public GameObject click;
     //public GameObject plank;
     private bool launchBegin;
     private int dir;
@@ -18,10 +19,12 @@ public class Launcher : MonoBehaviour {
         dir = 1;
         ball = GameObject.FindWithTag("Player");
         ResetBall();
+        click.SetActive(false);
     }
     private void Update()
     {
         if (launchBegin) {
+            click.SetActive(true);
             Vector3 rotate = Vector3.zero;
             rotate.z = dir * Time.deltaTime * rotateSpeed;
             GetComponentsInParent<Transform>()[1].Rotate(rotate);
