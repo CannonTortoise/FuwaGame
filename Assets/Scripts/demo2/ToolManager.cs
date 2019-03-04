@@ -26,6 +26,7 @@ public class ToolManager : MonoBehaviour {
     public float bombBallTime = 4.0f;
 
     public GameObject plank;        //板子
+    public GameObject[] launcher;// 发射器也需要初始化一下
 
     //public AudioSource hei;  //
     public AudioClip[] audioClips;
@@ -50,8 +51,11 @@ public class ToolManager : MonoBehaviour {
         withInvincibility = false;
         withMagnet = false;
         plank = GameObject.Find("Plank");
-        
-    }
+        launcher = GameObject.FindGameObjectsWithTag("Launcher");
+       
+       
+
+     }
     public void PlayAudio(int type)  //0：嘿 1：撞了 2：失败 3：通过
     {
         this.GetComponent<AudioSource>().clip = audioClips[type];

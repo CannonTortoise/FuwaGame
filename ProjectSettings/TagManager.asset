@@ -20,6 +20,9 @@ TagManager:
   - LevelBoundary
   - SuperFuel
   - EnterPac
+  - Launcher
+  - level3
+  - Level
   layers:
   - Default
   - TransparentFX

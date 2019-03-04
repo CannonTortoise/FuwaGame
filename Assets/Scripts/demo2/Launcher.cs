@@ -16,6 +16,8 @@ public class Launcher : MonoBehaviour {
 	void Awake () {
         launchBegin = false;
         dir = 1;
+        ball = GameObject.FindWithTag("Player");
+        ResetBall();
     }
     private void Update()
     {
@@ -40,10 +42,17 @@ public class Launcher : MonoBehaviour {
                 GetComponent<BoxCollider2D>().enabled = false;
                 ball.GetComponent<Rigidbody2D>().gravityScale = 1;
                 //Invoke("re_gravity", 1.0f);
-                //launch.SetActive(false);
+                ResetBall();
+                Destroy(launch);//consider why we need this "DESTROY"
+               
             }
         }
 
+    }
+    
+    private void ResetBall()
+    {
+        ball.GetComponent<Transform>().rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
