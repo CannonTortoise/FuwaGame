@@ -29,9 +29,9 @@ public class Loader : MonoBehaviour {
             GameObject.Instantiate(gamemanager);
         }
         ToolManager.Instance.IniToolmanager();
-        GameObject.Find("PlayerName").GetComponent<Text>().text = "Name: " + PlayerPrefs.GetString("player name");
-        GameObject.Find("Score").GetComponent<Text>().text = "Score: 0";
-        GameObject.Find("Height").GetComponent<Text>().text = "Height: 0";
+        //GameObject.Find("PlayerName").GetComponent<Text>().text = "Name: " + PlayerPrefs.GetString("player name");
+        //GameObject.Find("Score").GetComponent<Text>().text = "Score: 0";
+        //GameObject.Find("Height").GetComponent<Text>().text = "Height: 0";
         PlayerPrefs.SetInt("max height", 0);
         PlayerPrefs.SetInt("score", 0);
         //lc.GetComponent<LevelController>().ChangeLevel(PlayerPrefs.GetInt("level"));

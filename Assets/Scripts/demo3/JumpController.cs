@@ -41,6 +41,7 @@ public class JumpController : MonoBehaviour
     private ParticleSystem lexplodeFX;
     private ParticleSystem mexplodeFX;
     private ParticleSystem rexplodeFX;
+    private ParticleSystem confettiFX;
 
     void Awake()
     {
@@ -66,7 +67,8 @@ public class JumpController : MonoBehaviour
         mexplodeFX.Stop();
         rexplodeFX = GameObject.Find("RExplodeFX").GetComponentInChildren<ParticleSystem>();
         rexplodeFX.Stop();
-
+        confettiFX = GameObject.Find("ConfettiBlastRainbow").GetComponentInChildren<ParticleSystem>();
+        confettiFX.Stop();
     }
     private void ResetIdleSprite()
     {
@@ -161,6 +163,7 @@ public class JumpController : MonoBehaviour
     {
         if (collision.gameObject.tag == "LevelBoundary")
         {
+            confettiFX.Play();
             ToolManager.Instance.PlayAudio(3);
             lc.NextLevel();
             collision.gameObject.tag = "Untagged";
