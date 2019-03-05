@@ -24,6 +24,7 @@ public class Launcher : MonoBehaviour {
     private void Update()
     {
         if (launchBegin) {
+            ToolManager.Instance.withLuncher = true;
             click.SetActive(true);
             Vector3 rotate = Vector3.zero;
             rotate.z = dir * Time.deltaTime * rotateSpeed;
@@ -46,6 +47,7 @@ public class Launcher : MonoBehaviour {
                 ball.GetComponent<Rigidbody2D>().gravityScale = 1;
                 //Invoke("re_gravity", 1.0f);
                 ResetBall();
+                ToolManager.Instance.withLuncher = false;
                 Destroy(launch);//consider why we need this "DESTROY"
                
             }

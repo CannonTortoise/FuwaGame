@@ -88,7 +88,7 @@ public class JumpController : MonoBehaviour
         rtext.text = rstep.ToString();
 
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && ToolManager.Instance.withFuel==false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && ToolManager.Instance.withFuel==false && ToolManager.Instance.withLuncher == false)
         {
             mbutton.color = pressColor;
             if (mstep > 0) {
@@ -101,7 +101,7 @@ public class JumpController : MonoBehaviour
                 Invoke("ResetIdleSprite", jumpshowTime);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && ToolManager.Instance.withFuel == false)
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && ToolManager.Instance.withFuel == false && ToolManager.Instance.withLuncher == false)
         {
             lbutton.color = pressColor;
             if (lstep > 0)
@@ -115,7 +115,7 @@ public class JumpController : MonoBehaviour
                 Invoke("ResetIdleSprite", jumpshowTime);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && ToolManager.Instance.withFuel == false)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && ToolManager.Instance.withFuel == false && ToolManager.Instance.withLuncher == false)
         {
             rbutton.color = pressColor;
             if (rstep > 0)

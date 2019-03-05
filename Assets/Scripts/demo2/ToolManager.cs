@@ -28,6 +28,8 @@ public class ToolManager : MonoBehaviour {
     public GameObject plank;        //板子
     public GameObject[] launcher;// 发射器也需要初始化一下
 
+    public bool withLuncher = false; //表征是否在luncher上
+
     //public AudioSource hei;  //
     public AudioClip[] audioClips;
 
@@ -52,7 +54,7 @@ public class ToolManager : MonoBehaviour {
         withMagnet = false;
         plank = GameObject.Find("Plank");
         launcher = GameObject.FindGameObjectsWithTag("Launcher");
-       
+        withLuncher = false;
        
 
      }

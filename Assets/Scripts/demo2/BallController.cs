@@ -45,25 +45,25 @@ public class BallController : MonoBehaviour {
             GameObject.Find("HeightSlider").GetComponent<Slider>().value = percent;
         }
         //if(Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.L) || Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.A))
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && ToolManager.Instance.withLuncher==false)
         {
             GetComponent<Rigidbody2D>().velocity = middleVelocity;
             mbutton.color = pressColor;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && ToolManager.Instance.withLuncher == false) {
             GetComponent<Rigidbody2D>().velocity = leftVelocity;
             lbutton.color = pressColor;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && ToolManager.Instance.withLuncher == false) {
             GetComponent<Rigidbody2D>().velocity = rightVelocity;
             rbutton.color = pressColor;
         }
             
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow) && ToolManager.Instance.withLuncher == false)
             mbutton.color = Color.white;
-        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) && ToolManager.Instance.withLuncher == false)
             lbutton.color = Color.white;
-        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        else if (Input.GetKeyUp(KeyCode.RightArrow) && ToolManager.Instance.withLuncher == false)
             rbutton.color = Color.white;
     }
 
