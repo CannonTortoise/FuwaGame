@@ -22,7 +22,7 @@ public class CoinBox : MonoBehaviour {
     {
         Vector3 speed = GameObject.Find("Ball").GetComponent<Rigidbody2D>().velocity;
         //print(speed);
-        if (speed.y >= 0)
+        if (speed.y >= 0 && coin!=null )
             coin.SetActive(true);
     }
 

@@ -714,6 +714,7 @@ GameObject:
   - component: {fileID: 72504647}
   - component: {fileID: 72504646}
   - component: {fileID: 72504648}
+  - component: {fileID: 72504653}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -756,7 +757,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72504645}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -793,7 +794,7 @@ CircleCollider2D:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72504645}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -871,6 +872,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &72504653
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72504645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.9499999, y: 2.8499997}
+  m_Direction: 0
 --- !u!1001 &86718207
 Prefab:
   m_ObjectHideFlags: 0
@@ -4233,44 +4249,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4326816750670290, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 4221186972426914, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
-    - target: {fileID: 1412877220303180, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+    - target: {fileID: 1769526268904618, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
       propertyPath: m_Name
       value: Level1(Clone)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 3c574d0673c1e5f4180780daa0b3cbeb, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1258303308
 Prefab:
@@ -4625,18 +4641,18 @@ MonoBehaviour:
   - {x: 0, y: 83.6}
   - {x: 0, y: 108.6}
   levelStep:
-  - lstep: 2
-    mstep: 3
-    rstep: 2
-  - lstep: 20
-    mstep: 20
-    rstep: 20
-  - lstep: 4
+  - lstep: 3
     mstep: 4
-    rstep: 4
-  - lstep: 10
-    mstep: 10
-    rstep: 10
+    rstep: 3
+  - lstep: 12
+    mstep: 12
+    rstep: 12
+  - lstep: 5
+    mstep: 4
+    rstep: 5
+  - lstep: 3
+    mstep: 3
+    rstep: 3
   cameraRange:
   - min: -5.5
     max: 24
