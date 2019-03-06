@@ -1128,7 +1128,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6fa47d8c90e801b4e9f1cae3a9bd8ef3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2717ddce6e70b8240b3f560fc5ae5649, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4211,7 +4211,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2717ddce6e70b8240b3f560fc5ae5649, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fa47d8c90e801b4e9f1cae3a9bd8ef3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4631,12 +4631,12 @@ MonoBehaviour:
   - lstep: 20
     mstep: 20
     rstep: 20
-  - lstep: 5
-    mstep: 5
-    rstep: 5
-  - lstep: 50
-    mstep: 50
-    rstep: 50
+  - lstep: 4
+    mstep: 4
+    rstep: 4
+  - lstep: 10
+    mstep: 10
+    rstep: 10
   cameraRange:
   - min: -5.5
     max: 24
