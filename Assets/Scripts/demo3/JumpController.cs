@@ -48,9 +48,9 @@ public class JumpController : MonoBehaviour
         lstep = 100;
         mstep = 100;
         rstep = 100;
-        ltext = GameObject.Find("LStep").GetComponent<Text>();
-        mtext = GameObject.Find("MStep").GetComponent<Text>();
-        rtext = GameObject.Find("RStep").GetComponent<Text>();
+        ltext = GameObject.Find("LText").GetComponent<Text>();
+        mtext = GameObject.Find("MText").GetComponent<Text>();
+        rtext = GameObject.Find("RText").GetComponent<Text>();
         lbutton = GameObject.Find("LButton").GetComponent<Image>();
         mbutton = GameObject.Find("MButton").GetComponent<Image>();
         rbutton = GameObject.Find("RButton").GetComponent<Image>();
@@ -177,16 +177,19 @@ public class JumpController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             lstep += stepIncrement;
+            Debug.Log(lstep);
         }
         else if (collision.gameObject.tag == "MEnergy")
         {
             Destroy(collision.gameObject);
             mstep += stepIncrement;
+            Debug.Log(mstep);
         }
         else if (collision.gameObject.tag == "REnergy")
         {
             Destroy(collision.gameObject);
             rstep += stepIncrement;
+            Debug.Log(rstep);
         }
         else if (collision.gameObject.tag == "Coin")
         {

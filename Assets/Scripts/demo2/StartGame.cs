@@ -61,4 +61,13 @@ public class StartGame : MonoBehaviour {
         GameObject.Find("Continue").SetActive(false);
         levelsUI.SetActive(true);
     }
+
+    public void Select()
+    {
+        GameObject.Find("Select").SetActive(false);
+        GameObject.Find("Return").SetActive(false);
+        GameObject.Find("Continue").SetActive(false);
+        levelsUI.SetActive(true);
+    }
+
 }
