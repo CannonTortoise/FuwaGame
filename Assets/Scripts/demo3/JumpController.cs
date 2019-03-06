@@ -184,7 +184,7 @@ public class JumpController : MonoBehaviour
         if (collision.gameObject.tag == "LEnergy")
         {
             Destroy(collision.gameObject);
-            lstep += stepIncrement;
+            rstep += stepIncrement;
         }
         else if (collision.gameObject.tag == "MEnergy")
         {
@@ -194,7 +194,7 @@ public class JumpController : MonoBehaviour
         else if (collision.gameObject.tag == "REnergy")
         {
             Destroy(collision.gameObject);
-            rstep += stepIncrement;
+            lstep += stepIncrement;
         }
         else if (collision.gameObject.tag == "Coin")
         {
