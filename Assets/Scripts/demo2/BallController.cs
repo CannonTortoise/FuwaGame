@@ -45,7 +45,7 @@ public class BallController : MonoBehaviour {
             GameObject.Find("HeightSlider").GetComponent<Slider>().value = percent;
         }
         //if(Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.L) || Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.A))
-        if (Input.GetKeyDown(KeyCode.UpArrow) && )
+        if (Input.GetKeyDown(KeyCode.UpArrow) )
         {
             GetComponent<Rigidbody2D>().velocity = middleVelocity;
             mbutton.color = pressColor;
