@@ -177,19 +177,16 @@ public class JumpController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             lstep += stepIncrement;
-            Debug.Log(lstep);
         }
         else if (collision.gameObject.tag == "MEnergy")
         {
             Destroy(collision.gameObject);
             mstep += stepIncrement;
-            Debug.Log(mstep);
         }
         else if (collision.gameObject.tag == "REnergy")
         {
             Destroy(collision.gameObject);
             rstep += stepIncrement;
-            Debug.Log(rstep);
         }
         else if (collision.gameObject.tag == "Coin")
         {

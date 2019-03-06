@@ -4626,11 +4626,11 @@ MonoBehaviour:
   - {x: 0, y: 108.6}
   levelStep:
   - lstep: 2
-    mstep: 2
+    mstep: 3
     rstep: 2
-  - lstep: 50
-    mstep: 50
-    rstep: 50
+  - lstep: 20
+    mstep: 20
+    rstep: 20
   - lstep: 5
     mstep: 5
     rstep: 5
