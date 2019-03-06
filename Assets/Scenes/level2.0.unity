@@ -597,7 +597,7 @@ MonoBehaviour:
   verticalVelocity: 5
   horizontalVelocity: 2.5
   pressColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  stepIncrement: 2
+  stepIncrement: 3
   coinIncrement: 2
 --- !u!114 &72504647
 MonoBehaviour:
@@ -4514,6 +4514,26 @@ Prefab:
       propertyPath: m_Name
       value: Level1(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 4941646977693536, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.313
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941646977693536, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.724
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941646977693536, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.25392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704554587478538, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704554587478538, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.83
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4cdc03cbc6d5604aa608f3aba27c7c9, type: 2}
   m_IsPrefabAsset: 0
@@ -5028,14 +5048,14 @@ MonoBehaviour:
   - {x: 0, y: 108.6}
   levelStep:
   - lstep: 2
-    mstep: 2
+    mstep: 3
     rstep: 2
   - lstep: 50
     mstep: 50
     rstep: 50
-  - lstep: 5
-    mstep: 5
-    rstep: 5
+  - lstep: 20
+    mstep: 20
+    rstep: 20
   - lstep: 50
     mstep: 50
     rstep: 50
