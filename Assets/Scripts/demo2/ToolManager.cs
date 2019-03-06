@@ -32,9 +32,8 @@ public class ToolManager : MonoBehaviour {
 
     //public AudioSource hei;  //
     public AudioClip[] audioClips;
-
+    //public GameObject timer;
     
-        
     //提供外界访问方式
     private static ToolManager _instance;
     public static ToolManager Instance
@@ -55,9 +54,8 @@ public class ToolManager : MonoBehaviour {
         plank = GameObject.Find("Plank");
         launcher = GameObject.FindGameObjectsWithTag("Launcher");
         withLuncher = false;
-       
 
-     }
+    }
     public void PlayAudio(int type)  //0：嘿 1：撞了 2：失败 3：通过
     {
         this.GetComponent<AudioSource>().clip = audioClips[type];
@@ -66,11 +64,14 @@ public class ToolManager : MonoBehaviour {
     public void ResetMagnet()  //复位磁铁状态
     {
         withMagnet = false;
+        //timer.SetActive(false);
         return;
     }
     public void GetMagnet() //设置进入磁铁状态
     {
         withMagnet = true;
+        //timer.SetActive(true);
+        //timer.SendMessage("Begin", magnetTime);
         Invoke("ResetMagnet", magnetTime);
     }
 

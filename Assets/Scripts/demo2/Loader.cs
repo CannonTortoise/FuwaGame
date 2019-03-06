@@ -9,6 +9,7 @@ public class Loader : MonoBehaviour {
     public GameObject lc;
     public Transform _camera;
     public Transform _ball;
+    public GameObject timer;
     // Use this for initialization
 
     private void SetLevel(int level)
@@ -34,9 +35,10 @@ public class Loader : MonoBehaviour {
         //GameObject.Find("Height").GetComponent<Text>().text = "Height: 0";
         PlayerPrefs.SetInt("max height", 0);
         PlayerPrefs.SetInt("score", 0);
+        timer.SetActive(false);
         //lc.GetComponent<LevelController>().ChangeLevel(PlayerPrefs.GetInt("level"));
         //ToolManager.Instance.ball = GameObject.FindGameObjectWithTag("Player");
-        
+
     }
     
 

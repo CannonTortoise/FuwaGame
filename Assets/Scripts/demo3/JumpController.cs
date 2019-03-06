@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class JumpController : MonoBehaviour
 {
+    const string spritePath = "Sprites\\";
     private Sprite idlesprite;
     private SpriteRenderer sr;
     public float jumpshowTime=0.2f;
@@ -42,6 +43,13 @@ public class JumpController : MonoBehaviour
     private ParticleSystem mexplodeFX;
     private ParticleSystem rexplodeFX;
     private ParticleSystem confettiFX;
+
+    public GameObject timer;
+    const float magnetTime = 3.0f;  //磁铁持续时间
+    const float scaleTime = 3.0f;
+    const float incincibleTime = 20.0f;
+    const float bombBallTime = 4.0f;
+    const float fuelTime = 10.0f;  //小球获得燃料充能时间
 
     void Awake()
     {
@@ -213,26 +221,31 @@ public class JumpController : MonoBehaviour
         else if (collision.gameObject.tag == "Magnet")
         {
             Destroy(collision.gameObject);
+            timer.GetComponent <Timer>().Begin(magnetTime);
             ToolManager.Instance.GetMagnet();
         }
         else if (collision.gameObject.tag == "Fuel")
         {
             Destroy(collision.gameObject);
+            timer.GetComponent<Timer>().Begin(fuelTime);
             ToolManager.Instance.GetFuel(ToolManager.Instance.fuelTime);
         }
         else if (collision.gameObject.tag == "BallScale")
         {
             Destroy(collision.gameObject);
+            timer.GetComponent<Timer>().Begin(scaleTime);
             ToolManager.Instance.GetBallScale();
         }
         else if (collision.gameObject.tag == "Invincibility")
         {
             Destroy(collision.gameObject);
+            timer.GetComponent<Timer>().Begin(incincibleTime);
             ToolManager.Instance.GetInvincibility();
         }
         else if (collision.gameObject.tag == "BombBall")
         {
             Destroy(collision.gameObject);
+            timer.GetComponent<Timer>().Begin(bombBallTime);
             ToolManager.Instance.GetBombBall();
         }
         else if (collision.gameObject.tag == "Death" && ToolManager.Instance.withInvincibility == false)
