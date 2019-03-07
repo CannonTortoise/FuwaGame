@@ -163,7 +163,7 @@ public class JumpController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Death")
         {
-            
+            flicker.ResetTimer();
             lc.ResetLevel();
         }
         else if (collision.gameObject.tag == "Return")
@@ -260,6 +260,7 @@ public class JumpController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Death" && ToolManager.Instance.withInvincibility == false && this.transform.parent == null)
         {
+            flicker.ResetTimer();
             lc.ResetLevel();
         }
     }
