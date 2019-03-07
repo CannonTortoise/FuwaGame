@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class JumpController : MonoBehaviour
 {
@@ -164,7 +165,10 @@ public class JumpController : MonoBehaviour
             
             lc.ResetLevel();
         }
-
+        else if (collision.gameObject.tag == "Return")
+        {
+            SceneManager.LoadScene("start");
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)

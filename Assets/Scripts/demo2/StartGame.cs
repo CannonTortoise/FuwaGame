@@ -54,6 +54,7 @@ public class StartGame : MonoBehaviour {
         PlayerPrefs.SetInt("score", 0);
         PlayerPrefs.SetInt("level", n);
         SceneManager.LoadScene("level2.0");
+        Time.timeScale = 1;
     }
 
     public void Continue() {

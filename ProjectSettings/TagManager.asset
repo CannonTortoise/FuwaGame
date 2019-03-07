@@ -23,6 +23,7 @@ TagManager:
   - Launcher
   - level3
   - Level
+  - Return
   layers:
   - Default
   - TransparentFX
