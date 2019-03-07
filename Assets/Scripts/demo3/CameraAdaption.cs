@@ -5,8 +5,8 @@ using UnityEngine;
 //根据分辨率调整使相机宽度不变
 public class CameraAdaption : MonoBehaviour {
 
-    private float defaultOrthographicsSize = 5f;
-    private float defalutAspectRatio = 0.5625f;
+    public float defaultOrthographicsSize = 5f;
+    public float defalutAspectRatio = 0.5625f;
 
     // Use this for initialization
     void Start()
