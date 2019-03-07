@@ -252,7 +252,7 @@ public class JumpController : MonoBehaviour
             timer.GetComponent<Timer>().Begin(bombBallTime);
             ToolManager.Instance.GetBombBall();
         }
-        else if (collision.gameObject.tag == "Death" && ToolManager.Instance.withInvincibility == false)
+        else if (collision.gameObject.tag == "Death" && ToolManager.Instance.withInvincibility == false && this.transform.parent == null)
         {
             lc.ResetLevel();
         }
