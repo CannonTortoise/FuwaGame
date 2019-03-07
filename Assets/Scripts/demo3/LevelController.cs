@@ -21,8 +21,11 @@ public class LevelController : MonoBehaviour {
     public int totalLevel;
     private int currentLevel;
     public Vector2[] resetPos;
-    public Step[] levelStep;
+    private Step[] levelStep;
+    public Step[] easyStep;
+    public Step[] hardStep;
     public CameraRange[] cameraRange;
+    public bool IsHard = false;
     private JumpController jc;
     private CameraFollow cf;
     private GameObject levelPrefab;
@@ -35,10 +38,32 @@ public class LevelController : MonoBehaviour {
         cf = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         jc = GameObject.Find("Ball").GetComponent<JumpController>();
         ball = GameObject.Find("Ball");
+        if (IsHard)
+        {
+            levelStep = hardStep;
+        }
+        else
+        {
+            levelStep = easyStep;
+        }
         ChangeLevel(PlayerPrefs.GetInt("level"));
         for (int i = 0; i < resetFX.Length; i++)
             resetFX[i].Stop();
-        isResetting = false;
+        isResetting = false; 
+    }
+
+    public void ChooseHard()
+    {
+        IsHard = true;
+        levelStep = hardStep;
+        ResetLevel();
+    }
+
+    public void ChooseEasy()
+    {
+        IsHard = false;
+        levelStep = easyStep;
+        ResetLevel();
     }
 
     public void ChangeLevel(int i) {
