@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour {
 
@@ -18,14 +19,12 @@ public class LevelController : MonoBehaviour {
         public float max;
     }
 
-    public int totalLevel;
     private int currentLevel;
     public Vector2[] resetPos;
     private Step[] levelStep;
     public Step[] easyStep;
     public Step[] hardStep;
     public CameraRange[] cameraRange;
-    public bool IsHard = false;
     private JumpController jc;
     private CameraFollow cf;
     private GameObject levelPrefab;
@@ -33,19 +32,36 @@ public class LevelController : MonoBehaviour {
     private GameObject ball;
     private bool isResetting;   //是否正在重置
 
+    [Header("Difficulty")]
+    private bool IsHard = false;  //难度
+    public Image easyUI;
+    public Image hardUI;
+    public Color selectedColor;
+    public Color unselectedColor;
 
     void Start () {
         cf = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         jc = GameObject.Find("Ball").GetComponent<JumpController>();
         ball = GameObject.Find("Ball");
+
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+            IsHard = false;
+        else if (PlayerPrefs.GetInt("Difficulty") == 1)
+            IsHard = true;
+
         if (IsHard)
         {
             levelStep = hardStep;
+            easyUI.color = unselectedColor;
+            hardUI.color = selectedColor;
         }
         else
         {
             levelStep = easyStep;
+            easyUI.color = selectedColor;
+            hardUI.color = unselectedColor;
         }
+
         ChangeLevel(PlayerPrefs.GetInt("level"));
         for (int i = 0; i < resetFX.Length; i++)
             resetFX[i].Stop();
@@ -54,15 +70,21 @@ public class LevelController : MonoBehaviour {
 
     public void ChooseHard()
     {
+        PlayerPrefs.SetInt("Difficulty",1);
         IsHard = true;
         levelStep = hardStep;
+        easyUI.color = unselectedColor;
+        hardUI.color = selectedColor;
         ResetLevel();
     }
 
     public void ChooseEasy()
     {
+        PlayerPrefs.SetInt("Difficulty", 0);
         IsHard = false;
         levelStep = easyStep;
+        easyUI.color = selectedColor;
+        hardUI.color = unselectedColor;
         ResetLevel();
     }
 
