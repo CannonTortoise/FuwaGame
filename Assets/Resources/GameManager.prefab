@@ -159,7 +159,7 @@ MonoBehaviour:
   scaleTime: 3
   originalScale: 0.3
   withInvincibility: 0
-  incincibleTime: 20
+  incincibleTime: 8
   withBombBall: 0
   bombBallTime: 4
   plank: {fileID: 0}
@@ -170,4 +170,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35e9e04d4b86cc64483b717709008f27, type: 3}
   - {fileID: 8300000, guid: fb369a9a9e089a24b953ab2f8ff3e6f1, type: 3}
   - {fileID: 8300000, guid: cfd4efbadc0ce4d479489e2b945e5db6, type: 3}
-  timer: {fileID: 1265984778713306, guid: abba2a723eb9d364f9b61e18857243d6, type: 2}

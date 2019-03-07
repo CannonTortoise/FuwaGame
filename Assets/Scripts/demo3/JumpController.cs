@@ -45,10 +45,11 @@ public class JumpController : MonoBehaviour
     private ParticleSystem rexplodeFX;
     private ParticleSystem confettiFX;
 
-    public GameObject timer;
+    //public GameObject timer;
+    public Flicker flicker;
     const float magnetTime = 3.0f;  //磁铁持续时间
     const float scaleTime = 3.0f;
-    const float incincibleTime = 20.0f;
+    const float incincibleTime = 8.0f;
     const float bombBallTime = 4.0f;
     const float fuelTime = 10.0f;  //小球获得燃料充能时间
 
@@ -225,31 +226,36 @@ public class JumpController : MonoBehaviour
         else if (collision.gameObject.tag == "Magnet")
         {
             Destroy(collision.gameObject);
-            timer.GetComponent <Timer>().Begin(magnetTime);
+            //timer.GetComponent <Timer>().Begin(magnetTime);
+            //flicker.Begin(magnetTime);
             ToolManager.Instance.GetMagnet();
         }
         else if (collision.gameObject.tag == "Fuel")
         {
             Destroy(collision.gameObject);
-            timer.GetComponent<Timer>().Begin(fuelTime);
+            //timer.GetComponent<Timer>().Begin(fuelTime);
+            //flicker.Begin(fuelTime);
             ToolManager.Instance.GetFuel(ToolManager.Instance.fuelTime);
         }
         else if (collision.gameObject.tag == "BallScale")
         {
             Destroy(collision.gameObject);
-            timer.GetComponent<Timer>().Begin(scaleTime);
+            //timer.GetComponent<Timer>().Begin(scaleTime);
+            //flicker.Begin(scaleTime);
             ToolManager.Instance.GetBallScale();
         }
         else if (collision.gameObject.tag == "Invincibility")
         {
             Destroy(collision.gameObject);
-            timer.GetComponent<Timer>().Begin(incincibleTime);
+            //timer.GetComponent<Timer>().Begin(incincibleTime);
+            flicker.Begin(incincibleTime);
             ToolManager.Instance.GetInvincibility();
         }
         else if (collision.gameObject.tag == "BombBall")
         {
             Destroy(collision.gameObject);
-            timer.GetComponent<Timer>().Begin(bombBallTime);
+            //timer.GetComponent<Timer>().Begin(bombBallTime);
+            //flicker.Begin(bombBallTime);
             ToolManager.Instance.GetBombBall();
         }
         else if (collision.gameObject.tag == "Death" && ToolManager.Instance.withInvincibility == false && this.transform.parent == null)
