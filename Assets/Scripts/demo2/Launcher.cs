@@ -8,14 +8,17 @@ public class Launcher : MonoBehaviour {
     public float launchSpeed;
     public float maxAngle;
     public GameObject ball;
-    public GameObject launch;
+    //public GameObject launch;
     public GameObject click;
+    public Sprite afterLaunch;
     //public GameObject plank;
     private bool launchBegin;
     private int dir;
+    private bool valid;
 
 	void Awake () {
         launchBegin = false;
+        valid = true;
         dir = 1;
         ball = GameObject.FindWithTag("Player");
         ResetBall();
@@ -43,13 +46,15 @@ public class Launcher : MonoBehaviour {
                 else if(anglez >= 270)
                     ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(1, Mathf.Tan((anglez - 270) * Mathf.PI / 180)).normalized;
                 ball.GetComponent<CircleCollider2D>().enabled = true;
-                GetComponent<BoxCollider2D>().enabled = false;
+                //GetComponent<BoxCollider2D>().enabled = false;
                 ball.GetComponent<Rigidbody2D>().gravityScale = 1;
                 //Invoke("re_gravity", 1.0f);
                 ResetBall();
                 ToolManager.Instance.withLuncher = false;
-                Destroy(launch);//consider why we need this "DESTROY"
-               
+                //Destroy(launch);//consider why we need this "DESTROY"
+                click.SetActive(false);
+                GetComponent<SpriteRenderer>().sprite = afterLaunch;
+                valid = false;
             }
         }
 
@@ -62,13 +67,15 @@ public class Launcher : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        launchBegin = true;
-        ball.transform.parent = transform.parent;
-        ball.transform.localPosition = new Vector3(0, 2, 0);
-        ball.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        ball.GetComponent<Rigidbody2D>().gravityScale = 0;
-        ball.GetComponent<CircleCollider2D>().enabled = false;
-        //plank.SetActive(false);
+        if (valid) {
+            launchBegin = true;
+            ball.transform.parent = transform.parent;
+            ball.transform.localPosition = new Vector3(0, 2, 0);
+            ball.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            ball.GetComponent<Rigidbody2D>().gravityScale = 0;
+            ball.GetComponent<CircleCollider2D>().enabled = false;
+            //plank.SetActive(false);
+        }
     }
 
     private void re_gravity() {
