@@ -45,7 +45,7 @@ public class Launcher : MonoBehaviour {
                     ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(-1,Mathf.Tan((90 - anglez) * Mathf.PI / 180)).normalized;
                 else if(anglez >= 270)
                     ball.GetComponent<Rigidbody2D>().velocity = launchSpeed * new Vector2(1, Mathf.Tan((anglez - 270) * Mathf.PI / 180)).normalized;
-                ball.GetComponent<CircleCollider2D>().enabled = true;
+                ball.GetComponent<CapsuleCollider2D>().enabled = true;
                 //GetComponent<BoxCollider2D>().enabled = false;
                 ball.GetComponent<Rigidbody2D>().gravityScale = 1;
                 //Invoke("re_gravity", 1.0f);
@@ -73,7 +73,7 @@ public class Launcher : MonoBehaviour {
             ball.transform.localPosition = new Vector3(0, 2, 0);
             ball.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             ball.GetComponent<Rigidbody2D>().gravityScale = 0;
-            ball.GetComponent<CircleCollider2D>().enabled = false;
+            ball.GetComponent<CapsuleCollider2D>().enabled = false;
             //plank.SetActive(false);
         }
     }
