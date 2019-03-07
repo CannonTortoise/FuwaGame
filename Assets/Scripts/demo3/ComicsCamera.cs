@@ -27,10 +27,11 @@ public class ComicsCamera : MonoBehaviour {
 
     public void ChangeTarget() {
         target = comics[++cnt].position;
+        Debug.Log(target);
         if (cnt == comics.Length - 1)
         {
             startUI.SetActive(true);
-            GameObject.Find("Fli[").SetActive(false);
+            GameObject.Find("Flip").SetActive(false);
         }
 
     }

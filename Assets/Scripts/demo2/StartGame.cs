@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Time.timeScale = 1;
         //if (!PlayerPrefs.HasKey("highest score") || PlayerPrefs.GetInt("score") > PlayerPrefs.GetInt("highest score"))
         //{
         //    PlayerPrefs.SetString("highest name", PlayerPrefs.GetString("player name"));

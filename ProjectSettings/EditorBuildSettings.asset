@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/comics.unity
     guid: 864ea1c162fcfb448ab8688c8fabfffa
+  - enabled: 1
+    path: Assets/Scenes/teach.unity
+    guid: d2032b4f2a29bce4ba096d44675579ef
   m_configObjects: {}
