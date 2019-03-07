@@ -3271,6 +3271,19 @@ Prefab:
       propertyPath: m_Name
       value: Level2(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 61954602352949654, guid: 29ef027febd7ffd468908ae6796c76e9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045225780095078, guid: 29ef027febd7ffd468908ae6796c76e9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153959377860046, guid: 29ef027febd7ffd468908ae6796c76e9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ef027febd7ffd468908ae6796c76e9, type: 2}
   m_IsPrefabAsset: 0
@@ -5118,7 +5131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451b97618f71e0047a39fb9cd5002387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLevel: 5
   resetPos:
   - {x: 0, y: -2}
   - {x: 0, y: 24.6}
@@ -5145,15 +5157,15 @@ MonoBehaviour:
   - lstep: 2
     mstep: 2
     rstep: 2
-  - lstep: 12
+  - lstep: 10
     mstep: 8
-    rstep: 12
+    rstep: 10
   - lstep: 3
-    mstep: 4
+    mstep: 3
     rstep: 3
   - lstep: 0
     mstep: 2
-    rstep: 0
+    rstep: 2
   - lstep: 99
     mstep: 99
     rstep: 99
@@ -5168,7 +5180,6 @@ MonoBehaviour:
     max: 108
   - min: 106.5
     max: 128
-  IsHard: 0
   resetFX:
   - {fileID: 1036268175}
   - {fileID: 468654369}
