@@ -24,7 +24,7 @@ public class CoinMove : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (ToolManager.Instance.withMagnet == true )
         {if (GetComponentInParent<Pendulum>() != null)
             {
